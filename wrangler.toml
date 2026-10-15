@@ -1,0 +1,13 @@
+name = "halpurple-hub"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+workers_dev = true
+
+[[durable_objects.bindings]]
+name = "HUB"
+class_name = "Hub"
+
+# 無料プランは SQLite 方式の Durable Object だけ使えます(new_sqlite_classes)
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Hub"]
